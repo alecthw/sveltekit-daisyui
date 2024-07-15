@@ -8,12 +8,14 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
     "dev": "vite dev",
-    "format": "prettier --write .",
-    "lint": "prettier --check . && eslint .",
+    "eslint": "eslint \"**/*.{js,jsx,ts,tsx,svelte}\"",
+    "eslint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx,svelte}\"",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@eslint/js": "^9.7.0",
+    "@eslint/js": "^8.57.0",
     "@sveltejs/adapter-auto": "^3.2.2",
     "@sveltejs/kit": "^2.5.18",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
