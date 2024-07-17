@@ -1,3 +1,4 @@
+import { addDynamicIconSelectors } from '@iconify/tailwind';
 import daisyui from 'daisyui';
 import type { Config } from 'tailwindcss';
 
@@ -8,5 +9,5 @@ export default {
     extend: {},
   },
 
-  plugins: [daisyui],
+  plugins: [daisyui, addDynamicIconSelectors()],
 } as Config;
