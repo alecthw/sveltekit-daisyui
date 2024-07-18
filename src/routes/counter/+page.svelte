@@ -9,8 +9,8 @@
   });
 </script>
 
-<div class="flex h-full flex-col items-center justify-center bg-base-100">
-  <button class="btn btn-neutral" onclick={() => count++}>
-    {count} / {double}
-  </button>
+<div class="flex h-full flex-row items-center justify-center bg-base-100">
+  <button class="btn btn-info" onclick={() => count++}> Increase </button>
+  <p class="mx-2 font-mono text-lg font-semibold">{count} / {double}</p>
+  <button class="btn btn-accent" onclick={() => count--}> Decrease </button>
 </div>
