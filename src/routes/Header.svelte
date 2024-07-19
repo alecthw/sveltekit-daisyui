@@ -1,6 +1,13 @@
-<script>
+<script lang="ts">
   import { page } from '$app/stores';
   import { routes } from './sidebar';
+  import { setting } from '$lib/i18n';
+  import { translate } from '$lib/i18n';
+
+  const changeLang = (lang: any) => {
+    $setting = lang;
+    (document.activeElement as HTMLElement)?.blur();
+  };
 </script>
 
 <div class="navbar sticky top-0 z-10 bg-base-100 shadow-md">
@@ -10,7 +17,7 @@
     </label>
 
     {#if $page.url.pathname !== '/'}
-      <h1 class="ml-2 text-2xl font-semibold">{routes[$page.url.pathname].name}</h1>
+      <h1 class="ml-2 text-2xl font-semibold">{$translate(routes[$page.url.pathname].name)}</h1>
     {/if}
   </div>
 
@@ -28,20 +35,12 @@
 
       <ul class="menu dropdown-content z-[1] w-32 rounded-box bg-base-100 p-2 shadow">
         <li>
-          <button
-            onclick={() => {
-              console.log('English');
-            }}
-          >
+          <button onclick={() => changeLang('en')}>
             <span class="icon-[icon-park-outline--english]"></span>English
           </button>
         </li>
         <li>
-          <button
-            onclick={() => {
-              console.log('English');
-            }}
-          >
+          <button onclick={() => changeLang('zh')}>
             <span class="icon-[icon-park-outline--chinese]"></span>中文简体
           </button>
         </li>

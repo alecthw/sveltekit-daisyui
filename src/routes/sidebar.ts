@@ -1,15 +1,21 @@
-export interface TRoute {
-  name: string;
+type TRoute<Locale extends string> = {
+  name: Record<Locale, string>;
   icon: string;
-}
+};
 
-export const routes: { [key: string]: TRoute } = {
+export const routes: { [key: string]: TRoute<'en' | 'zh'> } = {
   '/counter': {
-    name: 'Counter',
+    name: {
+      en: 'Counter',
+      zh: '计数器',
+    },
     icon: 'icon-[material-symbols--calculate-outline]',
   },
   '/about': {
-    name: 'About',
+    name: {
+      en: 'About',
+      zh: '关于',
+    },
     icon: 'icon-[material-symbols--brightness-alert-outline]',
   },
 };
