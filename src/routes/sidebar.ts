@@ -6,10 +6,10 @@ export interface TRoute {
 export const routes: { [key: string]: TRoute } = {
   '/counter': {
     name: 'Counter',
-    icon: 'icon-[mdi--calculator-variant-outline]',
+    icon: 'icon-[material-symbols--calculate-outline]',
   },
   '/about': {
     name: 'About',
-    icon: 'icon-[mdi--alert-circle-outline]',
+    icon: 'icon-[material-symbols--brightness-alert-outline]',
   },
 };
