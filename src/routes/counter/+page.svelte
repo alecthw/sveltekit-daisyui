@@ -1,5 +1,3 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
   let count = $state(0);
   let double = $derived(count * 2);

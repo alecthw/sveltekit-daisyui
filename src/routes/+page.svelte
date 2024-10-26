@@ -1,7 +1,5 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
-  import { translate, locale } from '$lib/i18n';
+  import { _, locale } from 'svelte-i18n';
 
   $effect(() => {
     console.log($locale);
@@ -11,10 +9,7 @@
 <div class="flex h-full flex-col items-center justify-center bg-base-100">
   <p class="text-xl">Welcome to SvelteKit</p>
   <p>
-    {$translate({
-      en: 'Visit',
-      zh: '参考',
-    })}
+    {$_('home.visit')}
     <a class="link link-primary" target="_blank" href="https://kit.svelte.dev">kit.svelte.dev</a> to
     read the documentation
   </p>

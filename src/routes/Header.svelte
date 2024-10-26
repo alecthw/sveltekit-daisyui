@@ -1,11 +1,11 @@
 <script lang="ts">
+  import { _ } from 'svelte-i18n';
+
   import { page } from '$app/stores';
-  import { routes } from './sidebar';
-  import { setting } from '$lib/i18n';
-  import { translate } from '$lib/i18n';
+  import { locale } from 'svelte-i18n';
 
   const changeLang = (lang: any) => {
-    $setting = lang;
+    locale.set(lang);
     (document.activeElement as HTMLElement)?.blur();
   };
 </script>
@@ -17,7 +17,7 @@
     </label>
 
     {#if $page.url.pathname !== '/'}
-      <h1 class="ml-2 text-2xl font-semibold">{$translate(routes[$page.url.pathname].name)}</h1>
+      <h1 class="ml-2 text-2xl font-semibold">{$_(`routes.${$page.url.pathname}`)}</h1>
     {/if}
   </div>
 
