@@ -2,5 +2,6 @@
   "home.visit": "Visit",
 
   "routes./counter": "Counter",
+  "routes./more": "More",
   "routes./about": "About"
 }

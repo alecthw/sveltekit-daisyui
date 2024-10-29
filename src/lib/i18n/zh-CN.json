@@ -2,5 +2,6 @@
   "home.visit": "参考",
 
   "routes./counter": "计数器",
+  "routes./more": "更多",
   "routes./about": "关于"
 }

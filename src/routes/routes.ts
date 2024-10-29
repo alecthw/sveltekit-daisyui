@@ -1,13 +1,19 @@
-type TRoute = {
+export type TRoute = {
   icon: string;
   [key: string]: any;
+  submenu?: { [key: string]: TRoute };
 };
 
 export const routes: { [key: string]: TRoute } = {
   '/counter': {
     icon: 'icon-[material-symbols--calculate-outline]',
   },
-  '/about': {
+  '/more': {
     icon: 'icon-[material-symbols--brightness-alert-outline]',
+    submenu: {
+      '/about': {
+        icon: 'icon-[material-symbols--brightness-alert-outline]',
+      },
+    },
   },
 };

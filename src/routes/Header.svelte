@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { _ } from 'svelte-i18n';
+  import { _, locale } from 'svelte-i18n';
 
   import { page } from '$app/stores';
-  import { locale } from 'svelte-i18n';
 
   const changeLang = (lang: any) => {
     locale.set(lang);
@@ -35,13 +34,17 @@
 
       <ul class="menu dropdown-content z-[1] w-32 rounded-box bg-base-100 p-2 shadow">
         <li>
-          <button onclick={() => changeLang('en')}>
-            <span class="icon-[icon-park-outline--english]"></span>English
+          <button onclick={() => changeLang('en-US')}>
+            <span
+              class="icon-[icon-park-outline--english] {$locale === 'en-US' ? 'bg-primary' : ''}"
+            ></span>English
           </button>
         </li>
         <li>
-          <button onclick={() => changeLang('zh')}>
-            <span class="icon-[icon-park-outline--chinese]"></span>中文简体
+          <button onclick={() => changeLang('zh-CN')}>
+            <span
+              class="icon-[icon-park-outline--chinese] {$locale === 'zh-CN' ? 'bg-primary' : ''}"
+            ></span>简体中文
           </button>
         </li>
       </ul>

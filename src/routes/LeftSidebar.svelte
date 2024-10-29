@@ -4,6 +4,7 @@
   import { page } from '$app/stores';
   import SveltePng from '../assets/svelte.png';
   import { routes } from './routes';
+  import SidebarSubmenu from './SidebarSubmenu.svelte';
 </script>
 
 <div class="drawer-side z-30 shadow-[1px_0_3px_0px_rgba(0,0,0,0.1)]">
@@ -26,18 +27,22 @@
 
     {#each Object.entries(routes) as [path, route]}
       <li>
-        <a
-          class={$page.url.pathname === path ? 'bg-base-200  font-semibold ' : 'font-normal'}
-          href={path}
-          ><span class="{route.icon} h-6 w-6"></span>
-          {$_(path)}
-          {#if $page.url.pathname === path}
-            <span
-              class="absolute inset-y-0 left-0 w-1 rounded-br-md rounded-tr-md bg-primary"
-              aria-hidden="true"
-            ></span>
-          {/if}
-        </a>
+        {#if route.submenu}
+          <SidebarSubmenu {path} {route}></SidebarSubmenu>
+        {:else}
+          <a
+            class={$page.url.pathname === path ? 'bg-base-200  font-semibold ' : 'font-normal'}
+            href={path}
+            ><span class="{route.icon} h-6 w-6"></span>
+            {$_(`routes.${path}`)}
+            {#if $page.url.pathname === path}
+              <span
+                class="absolute inset-y-0 left-0 w-1 rounded-br-md rounded-tr-md bg-primary"
+                aria-hidden="true"
+              ></span>
+            {/if}
+          </a>
+        {/if}
       </li>
     {/each}
   </ul>

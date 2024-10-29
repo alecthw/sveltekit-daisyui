@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.c-daisyui-a {
+  @apply grid grid-flow-col content-start items-center gap-2;
+  grid-auto-columns: minmax(auto, max-content) auto max-content;
+}
