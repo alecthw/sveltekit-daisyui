@@ -10,4 +10,4 @@ export default {
   },
 
   plugins: [daisyui, addDynamicIconSelectors()],
-} as Config;
+} satisfies Config;

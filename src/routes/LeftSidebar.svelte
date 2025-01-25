@@ -1,7 +1,7 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n';
 
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import SveltePng from '../assets/svelte.png';
   import { routes } from './routes';
   import SidebarSubmenu from './SidebarSubmenu.svelte';
@@ -31,11 +31,11 @@
           <SidebarSubmenu {path} {route}></SidebarSubmenu>
         {:else}
           <a
-            class={$page.url.pathname === path ? 'bg-base-200  font-semibold ' : 'font-normal'}
+            class={page.url.pathname === path ? 'bg-base-200  font-semibold ' : 'font-normal'}
             href={path}
             ><span class="{route.icon} h-6 w-6"></span>
             {$_(`routes.${path}`)}
-            {#if $page.url.pathname === path}
+            {#if page.url.pathname === path}
               <span
                 class="absolute inset-y-0 left-0 w-1 rounded-br-md rounded-tr-md bg-primary"
                 aria-hidden="true"

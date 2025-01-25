@@ -1,7 +1,7 @@
 <script lang="ts">
   import { _, locale } from 'svelte-i18n';
 
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   const changeLang = (lang: any) => {
     locale.set(lang);
@@ -15,8 +15,8 @@
       <span class="icon-[material-symbols--menu] inline-block h-5 w-5"></span>
     </label>
 
-    {#if $page.url.pathname !== '/'}
-      <h1 class="ml-2 text-2xl font-semibold">{$_(`routes.${$page.url.pathname}`)}</h1>
+    {#if page.url.pathname !== '/'}
+      <h1 class="ml-2 text-2xl font-semibold">{$_(`routes.${page.url.pathname}`)}</h1>
     {/if}
   </div>
 

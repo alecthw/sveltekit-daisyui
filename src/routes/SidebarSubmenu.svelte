@@ -1,7 +1,7 @@
 <script lang="ts">
   import { _ } from 'svelte-i18n';
 
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import type { TRoute } from './routes';
 
   let {
@@ -38,11 +38,11 @@
       {#each Object.entries(route.submenu) as [subPath, subRoute]}
         <li>
           <a
-            class={$page.url.pathname === subPath ? 'bg-base-200  font-semibold ' : 'font-normal'}
+            class={page.url.pathname === subPath ? 'bg-base-200  font-semibold ' : 'font-normal'}
             href={subPath}
             ><span class="{subRoute.icon} h-5 w-5"></span>
             {$_(`routes.${subPath}`)}
-            {#if $page.url.pathname === subPath}
+            {#if page.url.pathname === subPath}
               <span
                 class="absolute inset-y-0 left-0 mb-1 mt-1 w-1 rounded-br-md rounded-tr-md bg-primary"
                 aria-hidden="true"
