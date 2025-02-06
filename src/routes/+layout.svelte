@@ -11,7 +11,7 @@
   <LeftSidebar />
   <div class="drawer-content flex flex-col">
     <Header />
-    <main class="flex-1 overflow-y-auto bg-base-200 px-6 pt-4 md:pt-4">
+    <main class="bg-base-200 flex-1 overflow-y-auto px-6 pt-4 md:pt-4">
       {@render children()}
     </main>
   </div>

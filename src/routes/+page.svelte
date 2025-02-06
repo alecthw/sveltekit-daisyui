@@ -6,7 +6,7 @@
   });
 </script>
 
-<div class="flex h-full flex-col items-center justify-center bg-base-100">
+<div class="bg-base-100 flex h-full flex-col items-center justify-center">
   <p class="text-xl">Welcome to SvelteKit</p>
   <p>
     {$_('home.visit')}

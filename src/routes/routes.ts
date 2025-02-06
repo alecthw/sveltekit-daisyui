@@ -6,13 +6,13 @@ export type TRoute = {
 
 export const routes: { [key: string]: TRoute } = {
   '/counter': {
-    icon: 'icon-[material-symbols--calculate-outline]',
+    icon: 'material-symbols:calculate-outline',
   },
   '/more': {
-    icon: 'icon-[material-symbols--brightness-alert-outline]',
+    icon: 'material-symbols:brightness-alert-outline',
     submenu: {
       '/about': {
-        icon: 'icon-[material-symbols--brightness-alert-outline]',
+        icon: 'material-symbols:brightness-alert-outline',
       },
     },
   },

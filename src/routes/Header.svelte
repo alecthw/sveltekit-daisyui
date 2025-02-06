@@ -1,5 +1,6 @@
 <script lang="ts">
   import { _, locale } from 'svelte-i18n';
+  import Icon from '@iconify/svelte';
 
   import { page } from '$app/state';
 
@@ -9,10 +10,10 @@
   };
 </script>
 
-<div class="navbar sticky top-0 z-10 bg-base-100 shadow-md">
+<div class="navbar bg-base-100 sticky top-0 z-10 shadow-md">
   <div class="flex-1">
     <label for="left-sidebar-drawer" class="btn btn-ghost drawer-button lg:hidden">
-      <span class="icon-[material-symbols--menu] inline-block h-5 w-5"></span>
+      <Icon icon="material-symbols:menu" class="inline-block h-5 w-5" />
     </label>
 
     {#if page.url.pathname !== '/'}
@@ -23,28 +24,32 @@
   <div class="flex-none">
     <label class="swap swap-rotate">
       <input type="checkbox" class="theme-controller" value="dark" />
-      <span class="swap-off icon-[material-symbols--sunny-outline] h-6 w-6"></span>
-      <span class="swap-on icon-[material-symbols--mode-night-outline] h-6 w-6"></span>
+      <Icon icon="material-symbols:sunny-outline" class="swap-off h-6 w-6" />
+      <Icon icon="material-symbols:mode-night-outline" class="swap-on h-6 w-6" />
     </label>
 
     <div class="dropdown dropdown-end">
       <label for="i18n" tabIndex={0} class="btn btn-circle btn-ghost">
-        <span class="icon-[material-symbols--language] h-6 w-6"></span>
+        <Icon icon="material-symbols:language" class="h-6 w-6" />
       </label>
 
-      <ul class="menu dropdown-content z-[1] w-32 rounded-box bg-base-100 p-2 shadow">
+      <ul class="menu dropdown-content rounded-box bg-base-100 z-[1] w-32 p-2 shadow-sm">
         <li>
           <button onclick={() => changeLang('en-US')}>
-            <span
-              class="icon-[icon-park-outline--english] {$locale === 'en-US' ? 'bg-primary' : ''}"
-            ></span>English
+            <Icon
+              icon="icon-park-outline:english"
+              class={$locale === 'en-US' ? 'text-primary' : ''}
+            />
+            English
           </button>
         </li>
         <li>
           <button onclick={() => changeLang('zh-CN')}>
-            <span
-              class="icon-[icon-park-outline--chinese] {$locale === 'zh-CN' ? 'bg-primary' : ''}"
-            ></span>简体中文
+            <Icon
+              icon="icon-park-outline:chinese"
+              class={$locale === 'zh-CN' ? 'text-primary' : ''}
+            />
+            简体中文
           </button>
         </li>
       </ul>
