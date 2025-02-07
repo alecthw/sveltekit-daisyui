@@ -32,7 +32,7 @@
           <SidebarSubmenu {path} {route}></SidebarSubmenu>
         {:else}
           <a
-            class={page.url.pathname === path ? 'bg-base-200  font-semibold ' : 'font-normal'}
+            class={page.url.pathname === path ? 'bg-base-200  font-semibold' : 'font-normal'}
             href={path}
           >
             <Icon icon={route.icon} class="h-6 w-6" />
