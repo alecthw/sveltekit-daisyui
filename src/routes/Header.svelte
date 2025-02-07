@@ -11,11 +11,13 @@
 </script>
 
 <div class="navbar bg-base-100 sticky top-0 z-10 shadow-md">
-  <div class="flex-1">
+  <div class="flex-none">
     <label for="left-sidebar-drawer" class="btn btn-ghost drawer-button lg:hidden">
-      <Icon icon="material-symbols:menu" class="inline-block h-5 w-5" />
+      <Icon icon="material-symbols:menu" class="h-5 w-5" />
     </label>
+  </div>
 
+  <div class="flex-1">
     {#if page.url.pathname !== '/'}
       <h1 class="ml-2 text-2xl font-semibold">{$_(`routes.${page.url.pathname}`)}</h1>
     {/if}

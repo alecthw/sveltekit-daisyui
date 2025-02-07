@@ -4,8 +4,8 @@
 
   import { page } from '$app/state';
   import SveltePng from '../assets/svelte.png';
-  import { routes } from './routes';
-  import SidebarSubmenu from './SidebarSubmenu.svelte';
+  import { menus } from './menus';
+  import type { TMenu } from './menus';
 </script>
 
 <div class="drawer-side z-30 shadow-[1px_0_3px_0px_rgba(0,0,0,0.1)]">
@@ -26,26 +26,38 @@
       <a href="/"><img class="mask mask-squircle w-10" src={SveltePng} alt="Svelte Logo" />Home</a>
     </li>
 
-    {#each Object.entries(routes) as [path, route]}
-      <li>
-        {#if route.submenu}
-          <SidebarSubmenu {path} {route}></SidebarSubmenu>
-        {:else}
-          <a
-            class={page.url.pathname === path ? 'bg-base-200  font-semibold' : 'font-normal'}
-            href={path}
-          >
-            <Icon icon={route.icon} class="h-6 w-6" />
-            {$_(`routes.${path}`)}
-            {#if page.url.pathname === path}
-              <span
-                class="bg-primary absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md"
-                aria-hidden="true"
-              ></span>
-            {/if}
-          </a>
-        {/if}
-      </li>
-    {/each}
+    {#snippet renderRoutes(menus:  Array<TMenu>)}
+      {#each menus as menu}
+        <li>
+          {#if menu.children}
+            <details open>
+              <summary>
+                <Icon icon={menu.icon} class="h-6 w-6" />
+                {$_(`routes.${menu.path}`)}
+              </summary>
+              <ul>
+                {@render renderRoutes(menu.children)}
+              </ul>
+            </details>
+          {:else}
+            <a
+              class={page.url.pathname === menu.path ? 'bg-base-200  font-semibold' : 'font-normal'}
+              href={menu.path}
+            >
+              <Icon icon={menu.icon} class="h-6 w-6" />
+              {$_(`routes.${menu.path}`)}
+              {#if page.url.pathname === menu.path}
+                <span
+                  class="bg-primary absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md"
+                  aria-hidden="true"
+                ></span>
+              {/if}
+            </a>
+          {/if}
+        </li>
+      {/each}
+    {/snippet}
+
+    {@render renderRoutes(menus)}
   </ul>
 </div>
