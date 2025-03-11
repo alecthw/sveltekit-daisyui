@@ -26,8 +26,8 @@
       <a href="/"><img class="mask mask-squircle w-10" src={SveltePng} alt="Svelte Logo" />Home</a>
     </li>
 
-    {#snippet renderRoutes(menus:  Array<TMenu>)}
-      {#each menus as menu}
+    {#snippet renderRoutes(menus: Array<TMenu>)}
+      {#each menus as menu (menu.path)}
         <li>
           {#if menu.children}
             <details open>

@@ -17,8 +17,7 @@ export const menus: Array<TMenu> = [
       {
         path: '/about',
         icon: 'material-symbols:brightness-alert-outline',
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
-
