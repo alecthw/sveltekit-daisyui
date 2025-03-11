@@ -3,5 +3,6 @@
 
   "routes./counter": "计数器",
   "routes./more": "更多",
-  "routes./about": "关于"
+  "routes./about": "关于",
+  "routes./watermark": "水印"
 }
