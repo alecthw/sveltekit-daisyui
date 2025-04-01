@@ -8,7 +8,7 @@
 
   onMount(() => {
     const watermark = new BlindWatermark({
-      content: 'daisyui-sveltekit',
+      content: 'sveltekit-daisyui',
       width: 200,
       height: 200,
       onSuccess: () => {},
