@@ -10,5 +10,13 @@ export default {
     'prettier-plugin-svelte',
     'prettier-plugin-tailwindcss',
   ],
-  overrides: [{ files: '*.svelte', options: { parser: 'svelte' } }],
+  overrides: [
+    {
+      files: '*.svelte',
+      options: {
+        parser: 'svelte',
+      },
+    },
+  ],
+  tailwindStylesheet: './src/app.css',
 };

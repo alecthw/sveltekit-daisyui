@@ -1,0 +1,16 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "hello_world": "Hello, {name}!",
+
+  "home": {
+    "visit": "Visit"
+  },
+
+  "routes": {
+    "counter": "Counter",
+    "more": "More",
+    "about": "About",
+    "watermark": "Watermark"
+  }
+}

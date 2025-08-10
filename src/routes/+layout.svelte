@@ -1,10 +1,12 @@
 <script lang="ts">
   import { BlindWatermark } from 'watermark-js-plus';
+  import { onMount } from 'svelte';
 
-  import '../app.css';
+  import favicon from '$lib/assets/favicon.svg';
   import Header from './Header.svelte';
   import LeftSidebar from './LeftSidebar.svelte';
-  import { onMount } from 'svelte';
+
+  import '../app.css';
 
   onMount(() => {
     const watermark = new BlindWatermark({
@@ -20,12 +22,16 @@
   let { children } = $props();
 </script>
 
+<svelte:head>
+  <link rel="icon" href={favicon} />
+</svelte:head>
+
 <div class="drawer lg:drawer-open">
   <input id="left-sidebar-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
     <Header />
-    <main class="bg-base-200 flex-1 overflow-y-auto px-6 pt-4 md:pt-4">
-      {@render children()}
+    <main class="flex-1 overflow-y-auto bg-base-200 px-6 pt-4 md:pt-4">
+      {@render children?.()}
     </main>
   </div>
   <LeftSidebar />

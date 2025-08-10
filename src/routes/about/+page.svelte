@@ -1,4 +1,4 @@
-<div class="bg-base-100 flex h-full flex-col items-center justify-center">
+<div class="flex h-full flex-col items-center justify-center bg-base-100">
   <h1>About</h1>
   <p>This is a about page.</p>
 </div>

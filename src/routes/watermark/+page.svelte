@@ -16,7 +16,7 @@
   });
 </script>
 
-<div class="bg-base-100 flex h-full flex-col items-center justify-center">
+<div class="flex h-full flex-col items-center justify-center bg-base-100">
   <input type="file" class="file-input" bind:files={inImage} />
   <img src={outImage} width={400} alt="out_image" class="m-8" />
 </div>

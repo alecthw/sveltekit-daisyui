@@ -1,0 +1,16 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+
+  "hello_world": "你好, {name}！",
+
+  "home": {
+    "visit": "参考"
+  },
+
+  "routes": {
+    "counter": "计数器",
+    "more": "更多",
+    "about": "关于",
+    "watermark": "水印"
+  }
+}
