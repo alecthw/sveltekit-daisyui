@@ -1,6 +1,8 @@
 <script lang="ts">
   import { BlindWatermark } from 'watermark-js-plus';
 
+  import ErrorScreen from '$lib/assets/error2.webp';
+
   let inImage: FileList | undefined = $state();
   let outImage: string = $state('');
 
@@ -18,5 +20,5 @@
 
 <div class="flex h-full flex-col items-center justify-center bg-base-100">
   <input type="file" class="file-input" bind:files={inImage} />
-  <img src={outImage} width={400} alt="out_image" class="m-8" />
+  <img src={outImage ? outImage : ErrorScreen} width={400} alt="out_image" class="m-8" />
 </div>

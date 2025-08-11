@@ -31,7 +31,7 @@
           {#if menu.children}
             <details open>
               <summary>
-                <Icon icon={menu.icon} class="h-6 w-6" />
+                <Icon icon={menu.icon} class="h-5 w-5" />
                 {menu.name}
               </summary>
               <ul>
@@ -43,7 +43,7 @@
               class={page.url.pathname === menu.path ? 'bg-base-200  font-semibold' : 'font-normal'}
               href={menu.path}
             >
-              <Icon icon={menu.icon} class="h-6 w-6" />
+              <Icon icon={menu.icon} class="h-5 w-5" />
               {menu.name}
               {#if page.url.pathname === menu.path}
                 <span

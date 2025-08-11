@@ -32,5 +32,6 @@
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "svelte"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
-  }
+  },
+  "prettier.documentSelectors": ["**/*.svelte"]
 }

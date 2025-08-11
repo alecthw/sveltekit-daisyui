@@ -9,7 +9,7 @@
     setLocale(lang);
   };
 
-  const getName = (path: string) => (m as any)[`routes${path.replace('/', '.')}`]();
+  const getName = (path: string) => (m as any)[`routes${path.replace('/', '.')}`]?.();
 </script>
 
 <div class="sticky top-0 z-10 navbar bg-base-100 shadow-md">
@@ -37,7 +37,7 @@
         <Icon icon="material-symbols:language" class="h-6 w-6" />
       </label>
 
-      <ul class="dropdown-content menu z-[1] w-32 rounded-box bg-base-100 p-2 shadow-sm">
+      <ul class="dropdown-content menu z-[1] w-32 rounded-box bg-base-100 p-2 shadow-xs">
         <li>
           <button onclick={() => changeLang('en-us')}>
             <Icon
