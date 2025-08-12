@@ -32,9 +32,6 @@ Change modules setting in `project.inlang\settings.json` file.
 
 ```json
 {
-  "modules": [
-    "./plugins/plugin-message-format.js",
-    "./plugins/plugin-m-function-matcher.js"
-  ]
+    "modules": ["./plugins/plugin-message-format.js", "./plugins/plugin-m-function-matcher.js"]
 }
 ```
